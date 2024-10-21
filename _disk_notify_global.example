@@ -6,8 +6,8 @@
 ### --------- backends
 ## choose a push_backend and set related settings
 
-# push_backend='sct'
-# sct_sendkey='your serverChan sendKey here'
+# push_backend='serverchan'
+# serverchan_sendkey='your serverChan sendKey here'
 ## https://sct.ftqq.com/sendkey
 
 push_backend='pushplus'

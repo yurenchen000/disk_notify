@@ -10,10 +10,10 @@ do_push_notify(){
     local msg="$2"
 
 	case "$push_backend" in
-telegram) do_push_telegram "$tit" "$msg";;
-pushplus) do_push_pushplus "$tit" "$msg";;
-	 sct) do_push_sct      "$tit" "$msg";;
-	   *) echo 'choose a push backend by set PUSH_BACKEND';;
+  telegram) do_push_telegram   "$tit" "$msg";;
+  pushplus) do_push_pushplus   "$tit" "$msg";;
+serverchan) do_push_serverchan "$tit" "$msg";;
+         *) echo 'choose a push backend by set PUSH_BACKEND';;
 	esac
 
     # echo "==`date -Is`: $tit: $msg"  >&2
@@ -22,10 +22,10 @@ pushplus) do_push_pushplus "$tit" "$msg";;
 
 load_push_impl(){
 	case "$push_backend" in
-telegram) source $dir/push_impl.telegram.sh;;
-pushplus) source $dir/push_impl.pushplus.sh;;
-	 sct) source $dir/push_impl.sct.sh;;
-	   *) echo 'choose a push backend by set PUSH_BACKEND';;
+  telegram) source $dir/push_impl.telegram.sh;;
+  pushplus) source $dir/push_impl.pushplus.sh;;
+serverchan) source $dir/push_impl.serverchan.sh;;
+	     *) echo 'choose a push backend by set PUSH_BACKEND';;
 	esac
 }
 
