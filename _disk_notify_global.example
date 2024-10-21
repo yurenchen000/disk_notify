@@ -1,6 +1,9 @@
 
 ### disk_notify config file
 ### vi: se ft=sh :
+
+
+### --------- backends
 ## choose a push_backend and set related settings
 
 # push_backend='sct'
@@ -11,4 +14,15 @@ push_backend='pushplus'
 pushplush_token='your pushplus token here'
 pushplush_topic='disk_notify'
 ## https://www.pushplus.plus/push1.html
+
+
+### --------- settings
+# push_delay=30 # push interval (will adjusted dynamically)
+
+# send_log='send_hist.log'
+# disk_log='disk_hist.log'
+
+# save_interval=$((1 * 3600))  # 1 hour (adjust as needed)
+# check_interval=300           # 5 min
+
 
