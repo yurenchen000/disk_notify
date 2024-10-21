@@ -1,0 +1,14 @@
+
+### disk_notify config file
+### vi: se ft=sh :
+## choose a push_backend and set related settings
+
+# push_backend='sct'
+# sct_sendkey='your serverChan sendKey here'
+## https://sct.ftqq.com/sendkey
+
+push_backend='pushplus'
+pushplush_token='your pushplus token here'
+pushplush_topic='disk_notify'
+## https://www.pushplus.plus/push1.html
+
