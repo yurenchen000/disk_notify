@@ -23,8 +23,8 @@ supported notify backends
 <br>
 
 logs
-- disk_space_file=df_hist.log   //disk avali space log
-- send_log=send_hist.log        //send noitfy log
+- disk_log=disk_hist.log   //disk space log
+- send_log=send_hist.log   //send noitfy log
 
 <br>
 
