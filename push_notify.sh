@@ -2,19 +2,28 @@
 send_key=${send_key:-'set your sendkey at conf'}
 send_log=${send_log:-'send_hist.log'}
 
+
 ## --------- direct send
 ## msg is markdown, new-line need '  \n' OR '\n\n'
 do_push_notify(){
     local tit="$1"
     local msg="$2"
-    curl "https://sctapi.ftqq.com/$send_key.send" \
-     --data-urlencode "title=$tit" \
-     --data-urlencode "desp=$msg"
-	echo 
+
+	case "$push_backend" in
+	 sct) do_push_sct "$tit" "$msg";;
+	   *) echo 'choose a push backend by set PUSH_BACKEND';;
+	esac
+
     # echo "==`date -Is`: $tit: $msg"  >&2
-    echo "==`date -Is`: $tit: $msg"  | tee /dev/tty >> $send_log
+    echo -e "\e[31m==`date -Is`: $tit: $msg\e[0m"  | tee /dev/tty >> $send_log
 }
 
+load_push_impl(){
+	case "$push_backend" in
+	 sct) source $dir/push_impl.sct.sh;;
+	   *) echo 'choose a push backend by set PUSH_BACKEND';;
+	esac
+}
 
 push_old=0    # last push time
 push_cnt=0    # push count (last hour)

@@ -30,6 +30,8 @@ source $dir/push_notify.sh
 source $dir/_disk_notify_global
 [ -f ~/.config/_disk_notify ] && source ~/.config/_disk_notify
 
+load_push_impl
+
 # Function to check disk space, notify if below threshold, and save information
 get_disk_space() {
     local mount_point="$1"
@@ -69,6 +71,7 @@ show_thresholds(){
     done
     echoY "-------check interval: $check_interval sec"
     echoY "-------save  interval: $save_interval sec"
+    echoY "-------push   backend: $push_backend"
     echo
 }
 
