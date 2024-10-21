@@ -20,6 +20,7 @@ declare -A mount_thresholds=(
 supported notify backends
 - pushplus
 - serverchan
+- telegram bot
 
 <br>
 
@@ -38,11 +39,17 @@ check frequency
 - save_interval=3600  // 1 hour
 - check_interval=300  // 5 min
 
+<br>
+
 ## 🚀 Usage
 
 // edit conf base on example  
 cp -pv _disk_notify_global.example _disk_notify_global  
 // Modify the configuration according to your needs  
+
+conf file
+- ./_disk_notify_global
+- ~/.config/_disk_notify
 
 <br>
 
