@@ -17,7 +17,7 @@ check_interval=300
 # check_interval=5
 
 # File to save disk space information
-disk_space_file="df_hist.log"
+disk_log="disk_hist.log"
 
 # Define mount_point : threshold
 declare -A mount_thresholds=(
@@ -41,7 +41,7 @@ get_disk_space() {
     local avail_mb=$(df -m "$mount_point" | awk 'NR==2 {print $4}')
 
     # Save disk space information
-    #echo "$(date '+%Y-%m-%d %H:%M:%S'): $mount_point ${avail_gb}GB" >> "$disk_space_file"
+    #echo "$(date '+%Y-%m-%d %H:%M:%S'): $mount_point ${avail_gb}GB" >> "$disk_log"
 
     echo "$avail_mb"  # Return available space in MB for comparison
 }
@@ -117,10 +117,10 @@ while true; do
 
         # Save disk space information if value changed or save interval reached
         if [ ${value_changed[$mount_point]} = "true" ] || (( current_time - ${last_save_time[$mount_point]:-0} >= save_interval )); then
-            # echo "`date '+%Y-%m-%d %H:%M:%S'`: ${avail_gb}GB $mount_point " | tee /dev/tty >> "$disk_space_file"
-            # echo "$fmt`date '+%Y-%m-%d %H:%M:%S'`: ${available} = ${avail_gb}GB $mount_point "$'\t'" $fmt0" | tee /dev/tty >> "$disk_space_file"
-            # printf "$fmt`date '+%Y-%m-%d %H:%M:%S'`: %8d = %8s  %-20s $stat $fmt0\n" ${available} ${avail_gb}GB $mount_point | tee /dev/tty >> "$disk_space_file"
-            printf "$fmt`date '+%Y-%m-%d %H:%M:%S'`: %8d = %8s  %-20s $stat $fmt0\n" ${available} ${avail_gb}GB $mount_point | tee -a "$disk_space_file"
+            # echo "`date '+%Y-%m-%d %H:%M:%S'`: ${avail_gb}GB $mount_point " | tee /dev/tty >> "$disk_log"
+            # echo "$fmt`date '+%Y-%m-%d %H:%M:%S'`: ${available} = ${avail_gb}GB $mount_point "$'\t'" $fmt0" | tee /dev/tty >> "$disk_log"
+            # printf "$fmt`date '+%Y-%m-%d %H:%M:%S'`: %8d = %8s  %-20s $stat $fmt0\n" ${available} ${avail_gb}GB $mount_point | tee /dev/tty >> "$disk_log"
+            printf "$fmt`date '+%Y-%m-%d %H:%M:%S'`: %8d = %8s  %-20s $stat $fmt0\n" ${available} ${avail_gb}GB $mount_point | tee -a "$disk_log"
             last_save_time[$mount_point]=$current_time
         fi
 
