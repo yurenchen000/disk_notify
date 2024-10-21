@@ -15,6 +15,10 @@ pushplush_token='your pushplus token here'
 pushplush_topic='disk_notify'
 ## https://www.pushplus.plus/push1.html
 
+push_backend='telegram'
+TELEGRAM_BOT_TOKEN='your telegram bot token here'
+TELEGRAM_CHAT_ID='your chat id here'
+## https://core.telegram.org/bots/tutorial
 
 ### --------- settings
 # push_delay=30 # push interval (will adjusted dynamically)
