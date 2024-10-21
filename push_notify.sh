@@ -10,7 +10,8 @@ do_push_notify(){
     local msg="$2"
 
 	case "$push_backend" in
-	 sct) do_push_sct "$tit" "$msg";;
+pushplus) do_push_pushplus "$tit" "$msg";;
+	 sct) do_push_sct      "$tit" "$msg";;
 	   *) echo 'choose a push backend by set PUSH_BACKEND';;
 	esac
 
@@ -20,6 +21,7 @@ do_push_notify(){
 
 load_push_impl(){
 	case "$push_backend" in
+pushplus) source $dir/push_impl.pushplus.sh;;
 	 sct) source $dir/push_impl.sct.sh;;
 	   *) echo 'choose a push backend by set PUSH_BACKEND';;
 	esac
