@@ -1,5 +1,5 @@
 
-send_key=${send_key:-'set your sendkey at conf'}
+# send_key=${send_key:-'set your sendkey at conf'}
 send_log=${send_log:-'send_hist.log'}
 
 
