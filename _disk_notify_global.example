@@ -25,6 +25,10 @@ wxpusher_spt='your wxpusher SPT here'
 ## https://wxpusher.zjiecode.com/docs/#/?id=spt
 
 
+## backend can set multi channels now
+push_backend='wxpusher pushplus'
+
+
 ### --------- settings
 # push_delay=30 # push interval (will adjusted dynamically)
 

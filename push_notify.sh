@@ -8,27 +8,34 @@ send_log=${send_log:-'send_hist.log'}
 do_push_notify(){
     local tit="$1"
     local msg="$2"
+	local backend
 
-	case "$push_backend" in
+	for backend in $push_backend; do
+	case "$backend" in
   telegram) do_push_telegram   "$tit" "$msg";;
   pushplus) do_push_pushplus   "$tit" "$msg";;
   wxpusher) do_push_wxpusher   "$tit" "$msg";;
 serverchan) do_push_serverchan "$tit" "$msg";;
          *) echo 'choose a push backend by set PUSH_BACKEND';;
 	esac
+	done
 
     # echo "==`date -Is`: $tit: $msg"  >&2
     echo -e "\e[31m==`date -Is`: $tit: $msg\e[0m"  | tee /dev/tty >> $send_log
 }
 
 load_push_impl(){
-	case "$push_backend" in
+	local backend
+
+	for backend in $push_backend; do
+	case "$backend" in
   telegram) source $dir/push_impl.telegram.sh;;
   pushplus) source $dir/push_impl.pushplus.sh;;
   wxpusher) source $dir/push_impl.wxpusher.sh;;
 serverchan) source $dir/push_impl.serverchan.sh;;
 	     *) echo 'choose a push backend by set PUSH_BACKEND';;
 	esac
+	done
 }
 
 push_old=0    # last push time
