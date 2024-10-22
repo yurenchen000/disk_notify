@@ -12,6 +12,7 @@ do_push_notify(){
 	case "$push_backend" in
   telegram) do_push_telegram   "$tit" "$msg";;
   pushplus) do_push_pushplus   "$tit" "$msg";;
+  wxpusher) do_push_wxpusher   "$tit" "$msg";;
 serverchan) do_push_serverchan "$tit" "$msg";;
          *) echo 'choose a push backend by set PUSH_BACKEND';;
 	esac
@@ -24,6 +25,7 @@ load_push_impl(){
 	case "$push_backend" in
   telegram) source $dir/push_impl.telegram.sh;;
   pushplus) source $dir/push_impl.pushplus.sh;;
+  wxpusher) source $dir/push_impl.wxpusher.sh;;
 serverchan) source $dir/push_impl.serverchan.sh;;
 	     *) echo 'choose a push backend by set PUSH_BACKEND';;
 	esac
