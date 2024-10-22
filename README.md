@@ -43,10 +43,14 @@ check frequency
 <br>
 
 ## 🚀 Usage
+download from https://github.com/yurenchen000/disk_notify/releases/latest  
+and uncompress it.
 
 // edit conf base on example  
+```
 cp -pv _disk_notify_global.example _disk_notify_global  
-// Modify the configuration according to your needs  
+// modify the conf according to your needs  
+```
 
 conf file
 - ./_disk_notify_global
