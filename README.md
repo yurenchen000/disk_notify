@@ -21,6 +21,7 @@ declare -A mount_thresholds=(
 
 supported notify backends
 - telegram bot
+- feishu bot
 - pushplus
 - wxpusher
 - serverchan

@@ -6,23 +6,28 @@
 ### --------- backends
 ## choose a push_backend and set related settings
 
-# push_backend='serverchan'
-# serverchan_sendkey='your serverChan sendKey here'
-## https://sct.ftqq.com/sendkey
-
 push_backend='pushplus'
 pushplush_token='your pushplus token here'
 pushplush_topic='disk_notify'
 ## https://www.pushplus.plus/push1.html
+
+push_backend='wxpusher'
+wxpusher_spt='your wxpusher SPT here'
+## https://wxpusher.zjiecode.com/docs/#/?id=spt
+
+push_backend='serverchan'
+serverchan_sendkey='your serverChan sendKey here'
+## https://sct.ftqq.com/sendkey
+
 
 push_backend='telegram'
 TELEGRAM_BOT_TOKEN='your telegram bot token here'
 TELEGRAM_CHAT_ID='your chat id here'
 ## https://core.telegram.org/bots/tutorial
 
-push_backend='wxpusher'
-wxpusher_spt='your wxpusher SPT here'
-## https://wxpusher.zjiecode.com/docs/#/?id=spt
+push_backend='feishu'
+FEISHU_BOT_TOKEN='your feishu bot token (uuid) here'
+## https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot#42b6d092
 
 
 ## backend can set multi channels now
