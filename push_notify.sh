@@ -13,6 +13,7 @@ do_push_notify(){
 	for backend in $push_backend; do
 	case "$backend" in
   telegram) do_push_telegram   "$tit" "$msg";;
+    feishu) do_push_feishu     "$tit" "$msg";;
   pushplus) do_push_pushplus   "$tit" "$msg";;
   wxpusher) do_push_wxpusher   "$tit" "$msg";;
 serverchan) do_push_serverchan "$tit" "$msg";;
@@ -30,6 +31,7 @@ load_push_impl(){
 	for backend in $push_backend; do
 	case "$backend" in
   telegram) source $dir/push_impl.telegram.sh;;
+    feishu) source $dir/push_impl.feishu.sh;;
   pushplus) source $dir/push_impl.pushplus.sh;;
   wxpusher) source $dir/push_impl.wxpusher.sh;;
 serverchan) source $dir/push_impl.serverchan.sh;;
