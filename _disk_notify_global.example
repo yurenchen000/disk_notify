@@ -43,4 +43,7 @@ push_backend='wxpusher pushplus'
 # save_interval=$((1 * 3600))  # 1 hour (adjust as needed)
 # check_interval=300           # 5 min
 
+### ---------- template for title & content
+# temp_tit='${hostname} ${mount_point} Low Disk Space Warning'
+# temp_msg='Available space on ${mount_point} is ${avail_gb}GB, which is below the ${threshold_gb}GB threshold.'
 

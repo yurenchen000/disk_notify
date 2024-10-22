@@ -16,6 +16,9 @@ check_interval=300
 # save_interval=5 
 # check_interval=5
 
+temp_tit='${hostname} ${mount_point} Low Disk Space Warning'
+temp_msg='Available space on ${mount_point} is ${avail_gb}GB, which is below the ${threshold_gb}GB threshold.'
+
 # File to save disk space information
 disk_log="disk_hist.log"
 
@@ -49,16 +52,24 @@ check_threashold_send_notify(){
     local mount_point="$1"
     local threshold="$2"
     local avail_mb="$3"
-
     # Convert MB to GB with one decimal place
     local avail_gb=$(echo "scale=1; $avail_mb / 1024" | bc)
-    # echo $'\n'"- check_threashold_send_notify: $mount_point $threshold $avail_mb"
+
+    local threshold_mb="$threshold"
+    local threshold_gb=$(echo "scale=1; $threshold / 1024" | bc)
+
+    local hostname="$HOSTNAME"
+
+    # local mount_point_threshold="$threshold"
+    # local mount_point_available="$avail_mb"
+    # local mount_point_avail_MB="$avail_mb"
+    # local mount_point_avail_GB="$avail_gb"
 
     if (( avail_mb < threshold )); then
-        local title="`hostname` $mount_point Low Disk Space Warning"
-        local msg="Available space on $mount_point is ${avail_gb}GB, which is below the $(echo "scale=1; $threshold / 1024" | bc)GB threshold."
+        local tit=`eval echo \"$temp_tit\"`
+        local msg=`eval echo \"$temp_msg\"`
         # push_notify "$title" "$msg"
-        push_notify_append "$title" "$msg" >/dev/null
+        push_notify_append "$tit" "$msg" >/dev/null
     fi
 }
 
