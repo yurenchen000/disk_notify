@@ -9,12 +9,13 @@
 do_push_wxpusher(){
     local tit="$1"
     local msg="$2"
+
     curl -s https://wxpusher.zjiecode.com/api/send/message/simple-push \
      -H 'Content-Type: application/json' -d @- <<-EOF
 	{
 		"content":"$msg",
 		"summary":"$tit",
-		"contentType":2,
+		"contentType":3,
 		"spt":"$wxpusher_spt"
 	}
 	EOF
