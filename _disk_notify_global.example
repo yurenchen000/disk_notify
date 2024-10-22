@@ -20,6 +20,11 @@ TELEGRAM_BOT_TOKEN='your telegram bot token here'
 TELEGRAM_CHAT_ID='your chat id here'
 ## https://core.telegram.org/bots/tutorial
 
+push_backend='wxpusher'
+wxpusher_spt='your wxpusher SPT here'
+## https://wxpusher.zjiecode.com/docs/#/?id=spt
+
+
 ### --------- settings
 # push_delay=30 # push interval (will adjusted dynamically)
 

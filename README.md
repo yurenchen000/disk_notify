@@ -18,9 +18,10 @@ declare -A mount_thresholds=(
 <br>
 
 supported notify backends
-- pushplus
-- serverchan
 - telegram bot
+- pushplus
+- wxpusher
+- serverchan
 
 <br>
 
