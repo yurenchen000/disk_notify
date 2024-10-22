@@ -1,11 +1,11 @@
 
-## --------- push via serverChan
+## --------- push via pushplus
 
 ## need conf
 # pushplush_token=${pushplush_token:-'set your pushplush_token at conf'}
 # pushplush_topic=
 
-## msg is markdown, new-line need '  \n' OR '\n\n'
+## msg is html?
 do_push_pushplus(){
     local tit="$1"
     local msg="$2"

@@ -1,7 +1,8 @@
 
 ## --------- push via serverChan
 
-serverchan_sendkey=${serverchan_sendkey:-'set your sendkey at conf'}
+## need conf
+# serverchan_sendkey=${serverchan_sendkey:-'set your sendkey at conf'}
 
 ## msg is markdown, new-line need '  \n' OR '\n\n'
 do_push_serverchan(){
@@ -13,3 +14,4 @@ do_push_serverchan(){
 	echo 
     # echo "==`date -Is`: $tit: $msg"  >&2
 }
+

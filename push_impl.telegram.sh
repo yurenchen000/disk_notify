@@ -1,11 +1,11 @@
 
-## --------- push via serverChan
+## --------- push via telegram bot
 
 ## need conf
 # TELEGRAM_BOT_TOKEN=
 # TELEGRAM_CHAT_ID=
 
-
+## msg is text //also support markdown,markdownv2,html
 do_push_telegram(){
     local tit="$1"
     local msg="$2"
