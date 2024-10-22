@@ -4,6 +4,8 @@ disk notify
 
 send notify if disk avail space low
 
+[README 中文](README_CN.md)
+
 ## 🛠️ Settings
 it can monit multi mountpoint with specified thresholds  
 by bash associative array. (key-value pairs)
