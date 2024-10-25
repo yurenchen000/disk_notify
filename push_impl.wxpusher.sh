@@ -24,4 +24,6 @@ do_push_wxpusher(){
 }
 
 ## note: this file indent need to be tabs, cause bash here-doc
+## contentType:1 seems broken with '>'
+
 
