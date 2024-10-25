@@ -21,8 +21,8 @@ do_push_telegram(){
 }
 
 ## omit is text
-## markdown is easy
+## markdown is easy, but limited formats
 ## markdownv2 need more escape (by preceding \) : _ * [] () {} ~ ` > # +-= |  . ! 
-## https://core.telegram.org/bots/api#formatting-options
+## msg formats: https://core.telegram.org/bots/api#formatting-options
 
 
