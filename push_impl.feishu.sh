@@ -4,7 +4,7 @@
 ## need conf
 # FEISHU_BOT_TOKEN=
 
-## msg is text //also support markdown,markdownv2,html
+## msg is text //also support rich post, no markdown support
 do_push_feishu(){
     local tit="$1"
     local msg="$2"
@@ -20,4 +20,8 @@ do_push_feishu(){
 }
 
 ## note: this file indent need to be tabs, cause bash here-doc
+## text: msg_type: 'text'  // easy to use
+## rich: msg_type: 'post'  // use nested json obj
+## msg formats: https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot#1b70f1fa
+
 
