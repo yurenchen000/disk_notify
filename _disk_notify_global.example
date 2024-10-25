@@ -27,7 +27,13 @@ TELEGRAM_CHAT_ID='your chat id here'
 
 push_backend='feishu'
 FEISHU_BOT_TOKEN='your feishu bot token (uuid) here'
+## don't turn on signature
 ## https://open.feishu.cn/document/client-docs/bot-v3/add-custom-bot#42b6d092
+
+push_backend='dingtalk'
+DINGTALK_BOT_TOKEN='your dingtalk bot token (uuid) here'
+## don't turn on signature
+## https://open.dingtalk.com/document/orgapp/obtain-the-webhook-address-of-a-custom-robot
 
 
 ## backend can set multi channels now
