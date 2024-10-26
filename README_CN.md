@@ -19,6 +19,7 @@ declare -A mount_thresholds=(
 支持的通知方式
 - Telegram 机器人 (需代理 可通过 https_proxy= 指定)
 - 飞书 机器人
+- 企业微信 机器人
 - 钉钉 机器人
 - Pushplus
 - Wxpusher
