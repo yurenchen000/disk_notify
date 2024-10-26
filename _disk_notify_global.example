@@ -35,6 +35,11 @@ DINGTALK_BOT_TOKEN='your dingtalk bot token (uuid) here'
 ## don't turn on signature
 ## https://open.dingtalk.com/document/orgapp/obtain-the-webhook-address-of-a-custom-robot
 
+push_backend='wework'
+WEWORK_BOT_KEY='your wework bot key (uuid) here'
+## note: can't send msg to wechat
+## https://developer.work.weixin.qq.com/document/path/99110
+
 
 ## backend can set multi channels now
 push_backend='wxpusher pushplus'

@@ -14,11 +14,12 @@ do_push_notify(){
 	case "$backend" in
   telegram) do_push_telegram   "$tit" "$msg";;
     feishu) do_push_feishu     "$tit" "$msg";;
+    wework) do_push_wework     "$tit" "$msg";;
   dingtalk) do_push_dingtalk   "$tit" "$msg";;
   pushplus) do_push_pushplus   "$tit" "$msg";;
   wxpusher) do_push_wxpusher   "$tit" "$msg";;
 serverchan) do_push_serverchan "$tit" "$msg";;
-         *) echo 'choose a push backend by set PUSH_BACKEND';;
+         *) echo 'choose a push backend by set push_backend in conf';;
 	esac
 	done
 
@@ -33,11 +34,12 @@ load_push_impl(){
 	case "$backend" in
   telegram) source $dir/push_impl.telegram.sh;;
     feishu) source $dir/push_impl.feishu.sh;;
+    wework) source $dir/push_impl.wework.sh;;
   dingtalk) source $dir/push_impl.dingtalk.sh;;
   pushplus) source $dir/push_impl.pushplus.sh;;
   wxpusher) source $dir/push_impl.wxpusher.sh;;
 serverchan) source $dir/push_impl.serverchan.sh;;
-	     *) echo 'choose a push backend by set PUSH_BACKEND';;
+	     *) echo 'choose push backend by set push_backend in conf';;
 	esac
 	done
 }
