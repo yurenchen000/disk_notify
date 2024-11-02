@@ -6,6 +6,8 @@ send notify if disk avail space low
 
 [README 中文](README_CN.md)
 
+<img src=https://i.imgur.com/zLzLm0B.jpeg alt="only-bash.jpg" height=300 />
+
 ## 🛠️ Settings
 it can monit multi mountpoint with specified thresholds  
 by bash associative array. (key-value pairs)
