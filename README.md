@@ -8,6 +8,14 @@ send notify if disk avail space low
 
 <img src=https://i.imgur.com/zLzLm0B.jpeg alt="only-bash.jpg" height=300 />
 
+
+- Lightweight: only bash, df, curl
+- Focus: only notify alert if space low
+- Accuracy: partition specified threshold
+- Reliable: multiple push channels
+
+<br>
+
 ## 🛠️ Settings
 it can monit multi mountpoint with specified thresholds  
 by bash associative array. (key-value pairs)
