@@ -15,8 +15,7 @@ do_push_wework(){
 	{
 	  "msgtype": "markdown",
 	  "markdown": {
-	    "title": "$tit",
-	    "text": "**== $tit ==**  \n$msg"
+	    "content": "**== $tit ==**  \n$msg"
 	  }
 	}
 	EOF
