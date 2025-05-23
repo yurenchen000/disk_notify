@@ -15,7 +15,7 @@ do_push_wework(){
 	{
 	  "msgtype": "markdown",
 	  "markdown": {
-	    "content": "**== $tit ==**  \n$msg"
+	    "content": "## <font color=\"warning\">$tit</font> \n$msg"
 	  }
 	}
 	EOF
