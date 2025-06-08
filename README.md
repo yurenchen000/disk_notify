@@ -77,3 +77,10 @@ conf file
 ```
 nohup ./disk_notify.sh &> disk_notify.out &
 ```
+
+<br>
+
+## Other Bash Script
+
+[![other bash repos](https://res.ez2.fun/svg/repos-bash_script.svg)](https://github.com/yurenchen000/yurenchen000/blob/main/repos.md#bash-scripts)
+
