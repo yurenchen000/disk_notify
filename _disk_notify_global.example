@@ -23,6 +23,8 @@ serverchan_sendkey='your serverChan sendKey here'
 push_backend='telegram'
 TELEGRAM_BOT_TOKEN='your telegram bot token here'
 TELEGRAM_CHAT_ID='your chat id here'
+TELEGRAM_PROXY='socks5://localhost:1080'
+
 ## https://core.telegram.org/bots/tutorial
 
 push_backend='feishu'
